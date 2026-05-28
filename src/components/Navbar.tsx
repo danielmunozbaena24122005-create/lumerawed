@@ -28,7 +28,7 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
-        <a href="#top" aria-label="Lumera inicio">
+        <a href="#top" aria-label="Lumera Wed inicio">
           <Logo />
         </a>
         <nav className="hidden md:flex items-center gap-10">

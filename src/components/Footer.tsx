@@ -47,13 +47,13 @@ export function Footer() {
         <div className="w-full max-w-md flex items-center gap-4">
           <span className="h-px flex-1 bg-primary/20" />
           <span className="text-[0.6rem] tracking-[0.4em] uppercase text-foreground/50">
-            Lumera Studio
+            Lumera Wed Studio
           </span>
           <span className="h-px flex-1 bg-primary/20" />
         </div>
 
         <p className="text-xs tracking-wider text-foreground/55 text-center">
-          © {new Date().getFullYear()} Lumera – Fotografía y Vídeo para Bodas,
+          © {new Date().getFullYear()} Lumera Wed – Fotografía y Vídeo para Bodas,
           Bautizos y Comuniones
         </p>
       </div>

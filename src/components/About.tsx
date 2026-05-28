@@ -15,7 +15,7 @@ export function About() {
           <div className="relative aspect-[4/5] overflow-hidden">
             <img
               src={aboutImg}
-              alt="Alberto y Laura, fotógrafos y videógrafos de Lumera"
+              alt="Alberto y Laura, fotógrafos y videógrafos de Lumera Wed"
               width={1200}
               height={1400}
               loading="lazy"
@@ -40,7 +40,7 @@ export function About() {
           </h2>
           <span className="gold-divider" />
           <p className="text-foreground/80 leading-relaxed text-lg font-light">
-            Somos Alberto y Laura, creadores de Lumera. Nos dedicamos a capturar
+            Somos Alberto y Laura, creadores de Lumera Wed. Nos dedicamos a capturar
             los momentos más especiales de vuestra vida a través de la fotografía
             y el vídeo. Especialistas en bodas, también acompañamos comuniones y
             bautizos para convertir cada emoción en un recuerdo inolvidable.
