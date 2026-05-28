@@ -51,7 +51,7 @@ export function About() {
           </p>
         </motion.div>
       </div>
-      </div>
+    </section>
     </section>
   );
 }
