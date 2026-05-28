@@ -22,8 +22,6 @@ export function About() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 hidden md:block border border-primary/40 w-32 h-32" />
-          
         </motion.div>
 
         <motion.div
