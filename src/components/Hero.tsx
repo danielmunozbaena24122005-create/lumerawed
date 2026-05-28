@@ -52,14 +52,6 @@ export function Hero() {
           </em>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="mt-8 max-w-xl text-base md:text-lg text-foreground/80 font-light tracking-wide"
-        >
-          Fotografía y vídeo para bodas, bautizos y comuniones.
-        </motion.p>
 
         <motion.a
           href="#contacto"
