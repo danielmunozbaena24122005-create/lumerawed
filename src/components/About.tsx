@@ -23,7 +23,7 @@ export function About() {
             />
           </div>
           <div className="absolute -bottom-6 -right-6 hidden md:block border border-primary/40 w-32 h-32" />
-          <div className="absolute -top-6 -left-6 hidden md:block border border-primary/20 w-20 h-20" />
+          
         </motion.div>
 
         <motion.div
