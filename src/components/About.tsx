@@ -34,7 +34,7 @@ export function About() {
           <span className="eyebrow">Sobre nosotros</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-balance">
             Somos
-            <span className="italic text-primary"> Alberto y Laura</span>
+            <span className="italic text-primary"> Laura y Alberto</span>
           </h2>
           <span className="gold-divider" />
           <p className="text-foreground/80 leading-relaxed text-lg font-light">
