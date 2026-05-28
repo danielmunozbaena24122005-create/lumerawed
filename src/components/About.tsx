@@ -50,7 +50,7 @@ export function About() {
             Nos implicamos en cada historia para que, cuando vuelvas a ella, no solo recuerdes cómo fue, sino cómo se sintió.
           </p>
         </motion.div>
-        </motion.div>
+      </div>
       </div>
     </section>
   );
