@@ -14,7 +14,7 @@ export function Logo({ className = "", showTagline = false }: LogoProps) {
       </span>
       {showTagline && (
         <span className="mt-2 text-[0.6rem] tracking-[0.4em] uppercase text-accent/80">
-          Photography · Film
+          Fotografía y vídeo
         </span>
       )}
     </div>
