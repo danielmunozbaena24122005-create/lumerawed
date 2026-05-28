@@ -49,20 +49,7 @@ export function About() {
           <p className="text-foreground/80 leading-relaxed text-lg font-light">
             Nos implicamos en cada historia para que, cuando vuelvas a ella, no solo recuerdes cómo fue, sino cómo se sintió.
           </p>
-          <div className="mt-4 flex flex-wrap gap-x-10 gap-y-6">
-            {[
-              { n: "+150", l: "Eventos capturados" },
-              { n: "8 años", l: "De experiencia" },
-              { n: "100%", l: "Pasión y entrega" },
-            ].map((s) => (
-              <div key={s.l} className="flex flex-col">
-                <span className="font-serif text-3xl text-primary">{s.n}</span>
-                <span className="mt-1 text-[0.7rem] tracking-[0.3em] uppercase text-foreground/60">
-                  {s.l}
-                </span>
-              </div>
-            ))}
-          </div>
+        </motion.div>
         </motion.div>
       </div>
     </section>
