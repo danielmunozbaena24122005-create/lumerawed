@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 export function ContactInfo() {
   return (
@@ -30,6 +30,13 @@ export function ContactInfo() {
             className="font-serif text-4xl md:text-5xl text-primary hover:text-accent transition-colors tracking-wider"
           >
             637 749 865
+          </a>
+          <a
+            href="mailto:lumera.wed@gmail.com"
+            className="inline-flex items-center gap-2 text-foreground/75 hover:text-primary transition-colors tracking-wide"
+          >
+            <Mail className="h-4 w-4" strokeWidth={1.2} />
+            lumera.wed@gmail.com
           </a>
           <a
             href="tel:+34637749865"
