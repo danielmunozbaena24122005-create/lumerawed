@@ -35,8 +35,7 @@ export function Footer() {
         </div>
 
         <p className="text-xs tracking-wider text-foreground/55 text-center">
-          © {new Date().getFullYear()} Lumera Wed – Fotografía y Vídeo para Bodas,
-          Bautizos y Comuniones
+          © {new Date().getFullYear()} Lumera Wed – Fotografía y Vídeo para Bodas
         </p>
       </div>
     </footer>
