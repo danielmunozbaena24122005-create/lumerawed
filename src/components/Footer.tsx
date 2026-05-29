@@ -29,7 +29,7 @@ export function Footer() {
         <div className="w-full max-w-md flex items-center gap-4">
           <span className="h-px flex-1 bg-primary/20" />
           <span className="text-[0.6rem] tracking-[0.4em] uppercase text-foreground/50">
-            Lumera Wed Studio
+            Lumera Wed
           </span>
           <span className="h-px flex-1 bg-primary/20" />
         </div>
