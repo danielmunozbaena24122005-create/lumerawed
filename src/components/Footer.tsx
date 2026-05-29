@@ -9,31 +9,13 @@ export function Footer() {
 
         <div className="flex items-center gap-6">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/lumera.wed?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Instagram"
             className="h-11 w-11 inline-flex items-center justify-center border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <Instagram className="h-4 w-4" strokeWidth={1.4} />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Facebook"
-            className="h-11 w-11 inline-flex items-center justify-center border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-          >
-            <Facebook className="h-4 w-4" strokeWidth={1.4} />
-          </a>
-          <a
-            href="https://tiktok.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="TikTok"
-            className="h-11 w-11 inline-flex items-center justify-center border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-          >
-            <TikTokIcon />
           </a>
         </div>
 
