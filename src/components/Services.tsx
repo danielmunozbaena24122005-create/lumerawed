@@ -34,11 +34,8 @@ export function Services() {
     >
       <SectionHeading
         eyebrow="Qué hacemos"
-        title={
-          <>
-            Nuestros <em className="not-italic text-primary">servicios</em>
-          </>
-        }
+      title="¿Qué hacemos?"
+      
         description="Cada celebración es única. Adaptamos nuestro trabajo a vuestra historia con sensibilidad, técnica y una mirada cinematográfica."
       />
 
