@@ -9,19 +9,19 @@ const services = [
   {
     icon: Heart,
     title: "Bodas",
-    text: "Fotografía y vídeo profesional para capturar cada instante de vuestro gran día.",
+    text: "Capturamos tu gran día con un enfoque natural, elegante y emocional, para que cada momento se recuerde tal y como se vivió.",
     img: wedding,
   },
   {
     icon: Baby,
     title: "Bautizos",
-    text: "Recuerdos únicos de los momentos más especiales en familia.",
+    text: "Documentamos la emoción de los bautizos con un estilo natural y cuidado, conservando cada momento importante de un día único en familia.",
     img: baptism,
   },
   {
     icon: Sparkles,
     title: "Comuniones",
-    text: "Reportajes fotográficos y audiovisuales llenos de emoción y naturalidad.",
+    text: "Fotografíamos las comuniones con un estilo natural y cuidado, conservando la ilusión, la familia y los pequeños detalles de un día muy especial.",
     img: communion,
   },
 ];
