@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 export function ContactInfo() {
   return (
