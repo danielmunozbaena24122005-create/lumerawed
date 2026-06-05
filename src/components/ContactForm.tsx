@@ -2,7 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { Check } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
 import { SectionHeading } from "./SectionHeading";
+import { submitContactRequest } from "@/lib/contact.functions";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Introduce tu nombre").max(100),
@@ -37,6 +39,8 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const sendRequest = useServerFn(submitContactRequest);
 
   const toggle = (v: string) =>
     setServices((s) => (s.includes(v) ? s.filter((x) => x !== v) : [...s, v]));
@@ -67,12 +71,18 @@ export function ContactForm() {
       return;
     }
     setSubmitting(true);
-    // TODO: integrar EmailJS o Formspree
-    await new Promise((r) => setTimeout(r, 900));
-    setSubmitting(false);
-    setSuccess(true);
-    (e.target as HTMLFormElement).reset();
-    setServices([]);
+    setSubmitError(null);
+    try {
+      await sendRequest({ data: res.data });
+      setSuccess(true);
+      (e.target as HTMLFormElement).reset();
+      setServices([]);
+    } catch (err) {
+      console.error(err);
+      setSubmitError("Ha ocurrido un error. Inténtalo de nuevo en unos minutos.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
