@@ -209,6 +209,11 @@ export function ContactForm() {
               </span>
             </motion.div>
           )}
+          {submitError && (
+            <span className="text-sm text-destructive-foreground bg-destructive/40 px-3 py-2">
+              {submitError}
+            </span>
+          )}
         </div>
       </motion.form>
     </section>
