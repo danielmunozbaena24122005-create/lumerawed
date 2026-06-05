@@ -1,0 +1,25 @@
+CREATE TABLE public.contact_requests (
+  id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT NOT NULL,
+  event_type TEXT NOT NULL,
+  services TEXT[] NOT NULL DEFAULT '{}',
+  event_date DATE NOT NULL,
+  event_time TIME,
+  place TEXT NOT NULL,
+  guests INTEGER,
+  message TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+GRANT INSERT ON public.contact_requests TO anon, authenticated;
+GRANT ALL ON public.contact_requests TO service_role;
+
+ALTER TABLE public.contact_requests ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Anyone can submit a contact request"
+ON public.contact_requests
+FOR INSERT
+TO anon, authenticated
+WITH CHECK (true);
