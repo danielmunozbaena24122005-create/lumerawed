@@ -24,6 +24,11 @@ const reviews = [
     body: "100x100 recomendable, durante todo el día atento a cada detalle, nos lo hizo todo super ameno, Alberto es super agradable y profesional, mil gracias.",
     author: "María",
   },
+  {
+    title: "El mayor descubrimiento y la mejor inversión",
+    body: "Nos los recomendaron para nuestra boda y ha sido la mejor decisión que hemos tomado. Super profesionales los dos y atentos. Mi pareja y yo no sabemos posar, se lo dijimos al principio y solo nos dieron facilidades, están en todos los detalles, además de ser super puntuales. Hubo momentos en el que no sabíamos ni que estaban allí, además de tener siempre una sonrisa y nos dieron unas fotos de anticipo el mismo día de la boda para abrir boca y puedo decir que son las mejores fotos que tengo en toda mi vida, también comentar que lo han realizado todo super rápido. Para cualquier cosa volveré a contar con ellos sin pensarlo dos veces ni mirar más opciones.",
+    author: "María Jesús",
+  },
 ];
 
 export function Testimonials() {
