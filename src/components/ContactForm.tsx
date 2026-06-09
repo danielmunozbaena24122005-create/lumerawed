@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { Check } from "lucide-react";
-import { useServerFn } from "@tanstack/react-start";
 import { SectionHeading } from "./SectionHeading";
-import { submitContactRequest } from "@/lib/contact.functions";
+
+const WEBHOOK_URL = "https://lumera-wed-XXXX.replit.app/api/webhook/submit";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Introduce tu nombre").max(100),
@@ -40,7 +40,7 @@ export function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const sendRequest = useServerFn(submitContactRequest);
+  
 
   const toggle = (v: string) =>
     setServices((s) => (s.includes(v) ? s.filter((x) => x !== v) : [...s, v]));
@@ -73,7 +73,24 @@ export function ContactForm() {
     setSubmitting(true);
     setSubmitError(null);
     try {
-      await sendRequest({ data: res.data });
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: res.data.name,
+          email: res.data.email,
+          phone: res.data.phone,
+          eventType: res.data.eventType,
+          services: res.data.services,
+          date: res.data.date,
+          time: res.data.time,
+          place: res.data.place,
+          guests: res.data.guests,
+          message: res.data.message,
+          source: "Web Lumera Wed",
+        }),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       setSuccess(true);
       (e.target as HTMLFormElement).reset();
       setServices([]);
