@@ -40,7 +40,7 @@ export function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const sendRequest = useServerFn(submitContactRequest);
+  
 
   const toggle = (v: string) =>
     setServices((s) => (s.includes(v) ? s.filter((x) => x !== v) : [...s, v]));
