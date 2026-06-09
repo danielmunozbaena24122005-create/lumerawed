@@ -73,7 +73,24 @@ export function ContactForm() {
     setSubmitting(true);
     setSubmitError(null);
     try {
-      await sendRequest({ data: res.data });
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: res.data.name,
+          email: res.data.email,
+          phone: res.data.phone,
+          eventType: res.data.eventType,
+          services: res.data.services,
+          date: res.data.date,
+          time: res.data.time,
+          place: res.data.place,
+          guests: res.data.guests,
+          message: res.data.message,
+          source: "Web Lumera Wed",
+        }),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       setSuccess(true);
       (e.target as HTMLFormElement).reset();
       setServices([]);
