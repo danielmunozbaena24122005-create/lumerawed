@@ -1,22 +1,25 @@
 import { motion } from "framer-motion";
-import heroImg from "@/assets/hero-wedding.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
+
 import { Logo } from "./Logo";
 
 export function Hero() {
   return (
     <section id="top" className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src={heroImg}
-          alt="Pareja de novios abrazándose al atardecer en su ceremonia"
-          width={1920}
-          height={1280}
+        <video
+          src={heroVideo.url}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="h-full w-full object-cover"
-          fetchPriority="high"
+          aria-label="Vídeo de cabecera de bodas"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
         <div className="absolute inset-0 bg-background/35" />
       </div>
+
 
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 text-center">
         <motion.div
