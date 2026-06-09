@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { Check } from "lucide-react";
-import { useServerFn } from "@tanstack/react-start";
 import { SectionHeading } from "./SectionHeading";
-import { submitContactRequest } from "@/lib/contact.functions";
+
+const WEBHOOK_URL = "https://lumera-wed-XXXX.replit.app/api/webhook/submit";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Introduce tu nombre").max(100),
