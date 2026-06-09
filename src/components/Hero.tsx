@@ -1,4 +1,4 @@
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import { motion } from "framer-motion";
 import { Logo } from "./Logo";
 
 export function Hero() {
