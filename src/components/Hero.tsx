@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
+
 import { Logo } from "./Logo";
 
 export function Hero() {
