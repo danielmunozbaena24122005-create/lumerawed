@@ -12,7 +12,7 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lumera Wed — Fotografía y Vídeo para Bodas, Bautizos y Comuniones" },
+      { title: "Lumera Wed — Fotografía y Vídeo de bodas en Sevilla" },
       {
         name: "description",
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Lumera Wed — Fotografía y Vídeo de Bodas",
+        content: "Lumera Wed — Fotografía y Vídeo de bodas en Sevilla",
       },
       {
         property: "og:description",
