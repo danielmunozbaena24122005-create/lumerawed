@@ -4,7 +4,7 @@ import { z } from "zod";
 import { Check } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
-const WEBHOOK_URL = "https://lumera-wed-danielmunozbaen.replit.app/api/webhook/submit";
+const WEBHOOK_URL = "https://form-capture-live--danielmunozbaen.replit.app/api/webhook/submit";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Introduce tu nombre").max(100),
