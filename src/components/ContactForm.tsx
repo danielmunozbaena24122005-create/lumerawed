@@ -211,7 +211,7 @@ export function ContactForm() {
             disabled={submitting}
             className="group inline-flex items-center gap-4 border border-primary bg-primary px-10 py-4 text-xs tracking-[0.35em] uppercase text-primary-foreground hover:bg-transparent hover:text-primary transition-all duration-500 disabled:opacity-60"
           >
-            {submitting ? "Enviando..." : "Solicitar presupuesto"}
+            {submitting ? "Enviando..." : "Enviar formulario"}
             <span className="block h-px w-8 bg-primary-foreground group-hover:bg-primary transition-colors" />
           </button>
           {success && (
