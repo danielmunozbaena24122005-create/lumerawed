@@ -77,16 +77,18 @@ export function ContactForm() {
     setSubmitError(null);
     try {
       await submitToDb({
-        name: res.data.name,
-        phone: res.data.phone,
-        email: res.data.email,
-        eventType: res.data.eventType,
-        services: res.data.services,
-        date: res.data.date,
-        time: res.data.time,
-        place: res.data.place,
-        guests: res.data.guests,
-        message: res.data.message,
+        data: {
+          name: res.data.name,
+          phone: res.data.phone,
+          email: res.data.email,
+          eventType: res.data.eventType,
+          services: res.data.services,
+          date: res.data.date,
+          time: res.data.time,
+          place: res.data.place,
+          guests: res.data.guests,
+          message: res.data.message,
+        },
       });
       try {
         const response = await fetch(WEBHOOK_URL, {
