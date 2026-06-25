@@ -17,6 +17,7 @@ const contactSchema = z.object({
 export const submitContactRequest = createServerFn({ method: "POST" })
   .inputValidator(contactSchema)
   .handler(async ({ data }) => {
+    console.log("[contact] handler called", data.email);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     const { error } = await supabaseAdmin.from("contact_requests").insert({
@@ -37,5 +38,6 @@ export const submitContactRequest = createServerFn({ method: "POST" })
       throw new Error("No se pudo guardar la solicitud");
     }
 
+    console.log("[contact] insert success");
     return { ok: true };
   });
