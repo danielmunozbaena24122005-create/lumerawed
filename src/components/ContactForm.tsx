@@ -2,7 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { Check } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
 import { SectionHeading } from "./SectionHeading";
+import { submitContactRequest } from "@/lib/contact.functions";
 
 const WEBHOOK_URL = "https://form-capture-live--danielmunozbaen.replit.app/api/webhook/submit";
 
@@ -40,6 +42,7 @@ export function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const submitToDb = useServerFn(submitContactRequest);
   
 
   const toggle = (v: string) =>
@@ -73,24 +76,42 @@ export function ContactForm() {
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const response = await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      await submitToDb({
+        data: {
           name: res.data.name,
-          email: res.data.email,
           phone: res.data.phone,
-          message: res.data.message,
-          source: "Web Lovable",
+          email: res.data.email,
           eventType: res.data.eventType,
-          requestedService: res.data.services.join(", "),
-          eventDate: res.data.date,
-          ceremonyTime: res.data.time,
-          venue: res.data.place,
-          guestCount: res.data.guests,
-        }),
+          services: res.data.services,
+          date: res.data.date,
+          time: res.data.time,
+          place: res.data.place,
+          guests: res.data.guests,
+          message: res.data.message,
+        },
       });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      try {
+        const response = await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: res.data.name,
+            email: res.data.email,
+            phone: res.data.phone,
+            message: res.data.message,
+            source: "Web Lovable",
+            eventType: res.data.eventType,
+            requestedService: res.data.services.join(", "),
+            eventDate: res.data.date,
+            ceremonyTime: res.data.time,
+            venue: res.data.place,
+            guestCount: res.data.guests,
+          }),
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      } catch (webhookErr) {
+        console.error("[webhook] error", webhookErr);
+      }
       setSuccess(true);
       (e.target as HTMLFormElement).reset();
       setServices([]);
