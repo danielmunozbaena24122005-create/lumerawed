@@ -76,8 +76,7 @@ export function ContactForm() {
     setSubmitting(true);
     setSubmitError(null);
     try {
-      console.log("[form] calling submitToDb");
-      const dbResult = await submitToDb({
+      await submitToDb({
         data: {
           name: res.data.name,
           phone: res.data.phone,
@@ -91,7 +90,6 @@ export function ContactForm() {
           message: res.data.message,
         },
       });
-      console.log("[form] db result", dbResult);
       try {
         const response = await fetch(WEBHOOK_URL, {
           method: "POST",
