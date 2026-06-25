@@ -2,7 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { Check } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
 import { SectionHeading } from "./SectionHeading";
+import { submitContactRequest } from "@/lib/contact.functions";
 
 const WEBHOOK_URL = "https://form-capture-live--danielmunozbaen.replit.app/api/webhook/submit";
 
@@ -40,6 +42,7 @@ export function ContactForm() {
   const [success, setSuccess] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const submitToDb = useServerFn(submitContactRequest);
   
 
   const toggle = (v: string) =>
